@@ -1,4 +1,7 @@
 pymupdf
 sentence-transformers
-Flask
+streamlit
 transformers
+openai
+numpy
+python-dotenv

@@ -1,8 +1,13 @@
+from processing import setup_database, extract_text_from_pdf, chunk_text, insert_chunks_to_database, search_database, generate_response_with_context
+
 import os
+from dotenv import load_dotenv
+
+
 def main():
     db_path = 'rag_database.db'
     setup_database(db_path)
-    pdf_directory = './pdfs'
+    pdf_directory = 'pdfs'
     pdf_files = [f for f in os.listdir(pdf_directory) if f.endswith('.pdf')]
 
     for pdf_file in pdf_files:
