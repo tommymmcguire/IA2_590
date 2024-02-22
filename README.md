@@ -9,7 +9,7 @@ This project uses Retrieval Augmented Generation to assist individuals with wild
 - `main.py`: The main script that processes a directory of PDFs to extract text, chunk it, and insert it into a SQLite database.
 - `processing.py`: Contains all the processing functions, including PDF text extraction, text chunking, database operations, and response generation.
 - `requirements.txt`: Dependencies required to run.
-- `pdfs` directory: contains the pdfs used to retrieve information from.
+- `pdfs` directory: contains the pdfs used to retrieve the information.
 
 ## Features
 
@@ -21,7 +21,7 @@ This project uses Retrieval Augmented Generation to assist individuals with wild
 ## Setup
 
 1. Clone the repository to your local machine.
-2. Install the required dependencies with `make install`.
+2. Install the required dependencies by running `make install`.
 3. Obtain an OpenAI API key and store it in a `.env` file in the root directory. The `.env` file should look like this:
 ```
 # Once you add your API key below, make sure to not share it with anyone! The API key should remain private.
@@ -38,13 +38,14 @@ To use the web interface, run `streamlit run app.py` and navigate to the URL pro
 
 ### Model Evaluation
 
-To evaluate the models, run `evaluate.py`. The script will output the performance scores of the RAG system and ChatGPT, providing insights into their effectiveness in generating relevant and accurate responses. The evaluation is based on the quality of responses these models generate in response to a series of prompts related to wilderness survival.
+To evaluate the models, run `evaluate.py`. The script will output the performance scores of the RAG system and ChatGPT, providing insights into their effectiveness in generating relevant and accurate responses. The evaluation is based on the quality of responses these models generate in response to a series of prompts related to wilderness survival. Each time `evaluate.py` is run, new scores are calculated based on the output of the RAG model and ChatGPT4. 
 
 #### Metrics for Scoring
 
-ROUGE (Recall-Oriented Understudy for Gisting Evaluation) Scores: These metrics compare the overlap of n-grams between the generated text and the reference texts. The `rouge1` score measures the overlap of individual words or unigrams, while `rougeL` score accounts for pairs of words or bigrams, which can indicate the fluency and coherence of the generated responses. Each time `evaluate.py` is run, new scores are calculated based on the output of the RAG model and ChatGPT4. 
+ROUGE (Recall-Oriented Understudy for Gisting Evaluation) Scores: These metrics compare the overlap of n-grams between the generated text and the reference texts. The `rouge1` score measures the overlap of individual words or unigrams, while `rougeL` score accounts for pairs of words or bigrams, which can indicate the fluency and coherence of the generated responses. 
 
 ##### Performance
 
+<img width="644" alt="Screenshot 2024-02-21 at 11 27 23 PM" src="https://github.com/tommymmcguire/IA2_590/assets/141086024/b0f3b3a2-69d0-46ee-8996-31b231d49ea0">
 
 
