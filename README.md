@@ -22,7 +22,7 @@ In developing this application, specific constraints were adhered to ensure a cu
 
 ## Detailed Functionality
 
-- `processing.py`: Handles the extraction of text from PDFs, chunking of text, storage of text chunks and embeddings in a SQLite database, and performs semantic search to retrieve relevant text chunks for user queries.
+- `processing.py`: Handles the extraction of text from PDFs, chunking of text, storage of text chunks and embeddings in a SQLite database, and performs semantic search to retrieve relevant text chunks for user queries. Embeddings were created using `thenlper/gte-small` found on Hugging Face.
 
 - `main.py`: Serves as the entry point for processing PDFs to populate the database with text chunks and their corresponding embeddings.
 
