@@ -75,7 +75,6 @@ ROUGE (Recall-Oriented Understudy for Gisting Evaluation) Scores: These metrics 
 
 <img width="605" alt="Screenshot 2024-02-22 at 12 47 13 AM" src="https://github.com/tommymmcguire/IA2_590/assets/141086024/4ccbd2f0-186a-4dad-822c-e457b1d68dd1">
 
-**Walk Through Youtube Video**
-[YouTube](https://youtu.be/2JvB30ilFV8)
+**Walk Through [Youtube Video](https://youtu.be/2JvB30ilFV8)**
 
 
