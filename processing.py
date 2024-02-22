@@ -2,7 +2,6 @@ import fitz  # PyMuPDF
 import sqlite3
 from sentence_transformers import SentenceTransformer
 import numpy as np
-from transformers import AutoTokenizer, AutoModelForCausalLM
 from openai import OpenAI
 import openai
 from dotenv import load_dotenv
@@ -36,7 +35,7 @@ def setup_database(db_path='rag_database.db'):
     conn.commit()
     conn.close()
     
-model = SentenceTransformer('all-MiniLM-L6-v2')
+model = SentenceTransformer("thenlper/gte-small")
 
 # Define the functions to insert and search for chunks in the database
 def insert_chunks_to_database(chunks, db_path='rag_database.db'):

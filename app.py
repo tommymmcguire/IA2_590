@@ -1,9 +1,10 @@
 import streamlit as st
 from processing import search_database, generate_response_with_context
 
-# Assuming the database setup and PDF processing is already done
-db_path = 'rag_database.db'  # Path to your database
+# Path to your database
+db_path = 'rag_database.db'  
 
+# Set the title of the app
 st.title('Wilderness Medical Self-Surivial Guide')
 
 # Input for user question

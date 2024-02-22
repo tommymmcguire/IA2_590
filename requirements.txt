@@ -5,3 +5,4 @@ transformers
 openai
 numpy
 python-dotenv
+rouge-score

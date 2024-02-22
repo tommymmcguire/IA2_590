@@ -1,4 +1,3 @@
-from nltk.translate.bleu_score import corpus_bleu
 from rouge_score import rouge_scorer
 from typing import List, Tuple
 from processing import search_database, generate_response_with_context
@@ -9,7 +8,7 @@ import os
 
 # Define the functions to generate responses using RAG 
 def generate_rag_response(prompt: str) -> str:
-    db_path = 'rag_database.db'  # Ensure this is correctly pointing to your database
+    db_path = 'rag_database.db'  
     context_chunks = search_database(prompt, db_path)
 
     if not context_chunks:  # In case no relevant chunks were found
