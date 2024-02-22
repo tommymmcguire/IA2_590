@@ -8,7 +8,7 @@ import openai
 from dotenv import load_dotenv
 import os
 
-
+# Define the functions to process the PDFs and populate the database
 def extract_text_from_pdf(pdf_path):
     doc = fitz.open(pdf_path)
     text = ""
@@ -16,9 +16,12 @@ def extract_text_from_pdf(pdf_path):
         text += page.get_text()
     return text
 
+
+# Define the function to chunk the text into smaller pieces
 def chunk_text(text, chunk_size=100):
     return [text[i:i+chunk_size] for i in range(0, len(text), chunk_size)]
 
+# Define the function to set up the database
 def setup_database(db_path='rag_database.db'):
     conn = sqlite3.connect(db_path)
     c = conn.cursor()
@@ -35,6 +38,7 @@ def setup_database(db_path='rag_database.db'):
     
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
+# Define the functions to insert and search for chunks in the database
 def insert_chunks_to_database(chunks, db_path='rag_database.db'):
     conn = sqlite3.connect(db_path)
     c = conn.cursor()
@@ -48,6 +52,7 @@ def insert_chunks_to_database(chunks, db_path='rag_database.db'):
     conn.commit()
     conn.close()
 
+# Define the function to search the database for relevant chunks based on a query
 def search_database(query, db_path='rag_database.db', top_k=1):
     # Encode the query to get its embedding
     query_embedding = model.encode(query, convert_to_tensor=True).tolist()
@@ -80,6 +85,7 @@ def search_database(query, db_path='rag_database.db', top_k=1):
 
     return top_k_chunks
 
+# Define the function to generate responses using RAG
 def generate_response_with_context(prompt, context_chunks, max_tokens=150):
     # Craft the prompt with context for actionable wilderness survival tips
     prompt_intro = "Provide practical wilderness survival tips based on the following key points. Focus on actionable advice:"

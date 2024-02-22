@@ -5,11 +5,13 @@ from dotenv import load_dotenv
 
 
 def main():
+    # Load the environment variables
     db_path = 'rag_database.db'
     setup_database(db_path)
     pdf_directory = 'pdfs'
     pdf_files = [f for f in os.listdir(pdf_directory) if f.endswith('.pdf')]
 
+    # Process the PDFs and populate the database
     for pdf_file in pdf_files:
         pdf_path = os.path.join(pdf_directory, pdf_file)
         text = extract_text_from_pdf(pdf_path)
