@@ -16,7 +16,7 @@ def extract_text_from_pdf(pdf_path):
         text += page.get_text()
     return text
 
-def chunk_text(text, chunk_size=500):
+def chunk_text(text, chunk_size=100):
     return [text[i:i+chunk_size] for i in range(0, len(text), chunk_size)]
 
 def setup_database(db_path='rag_database.db'):
@@ -48,7 +48,7 @@ def insert_chunks_to_database(chunks, db_path='rag_database.db'):
     conn.commit()
     conn.close()
 
-def search_database(query, db_path='rag_database.db', top_k=5):
+def search_database(query, db_path='rag_database.db', top_k=1):
     # Encode the query to get its embedding
     query_embedding = model.encode(query, convert_to_tensor=True).tolist()
 
