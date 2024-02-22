@@ -44,7 +44,7 @@ To evaluate the models, run `evaluate.py`. The script will output the performanc
 
 ROUGE (Recall-Oriented Understudy for Gisting Evaluation) Scores: These metrics compare the overlap of n-grams between the generated text and the reference texts. The `rouge1` score measures the overlap of individual words or unigrams, while `rougeL` score accounts for pairs of words or bigrams, which can indicate the fluency and coherence of the generated responses. 
 
-##### Performance
+#### Performance
 
 <img width="644" alt="Screenshot 2024-02-21 at 11 27 23 PM" src="https://github.com/tommymmcguire/IA2_590/assets/141086024/b0f3b3a2-69d0-46ee-8996-31b231d49ea0">
 
